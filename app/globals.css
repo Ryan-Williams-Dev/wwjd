@@ -3,19 +3,35 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: hsl(0, 0%, 97%);
+  --foreground: hsl(0, 0%, 20%);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: hsl(0, 0%, 97%);
+    --foreground: hsl(0, 0%, 20%);
+    --h1: bold 1.125rem/1.4em var(--font-fredoka);
+    --h2: bold 1rem/1.4em var(--font-fredoka);
+    --p: 1rem/1.4em var(--font-fredoka);
+    --p2: 0.875rem/1.4em var(--font-fredoka);
+    --gray100: hsl(0, 0%, 100%);
+    --gray90: hsl(0, 0%, 90%);
+    --gray80: hsl(0, 0%, 80%);
+    --gray70: hsl(0, 0%, 70%);
+    --gray60: hsl(0, 0%, 60%);
+    --gray50: hsl(0, 0%, 50%);
+    --gray40: hsl(0, 0%, 40%);
+    --gray30: hsl(0, 0%, 30%);
+    --gray20: hsl(0, 0%, 20%);
+    --gray10: hsl(0, 0%, 10%);
+    --gray5: hsl(0, 0%, 5%);
+    --gray0: hsl(0, 0%, 0%);
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-fredoka);
 }
