@@ -2,7 +2,17 @@
 
 import { useState } from "react";
 
-export default function JesusChat() {
+interface JesusChatProps {
+  predicament: string;
+  inputLabel: string;
+  buttonPhrase: string;
+}
+
+export default function JesusChat({
+  predicament,
+  inputLabel,
+  buttonPhrase,
+}: JesusChatProps) {
   const [input, setInput] = useState("");
   const [response, setResponse] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -28,25 +38,40 @@ export default function JesusChat() {
   };
 
   return (
-    <div className="p-6 max-w-lg mx-auto">
-      <h2 className="text-2xl font-bold mb-4">What Would Jesus Do?</h2>
-      <input
-        type="text"
-        className="w-full p-2 border rounded mb-4"
-        placeholder="Enter your predicament..."
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
-      <button
-        onClick={getJesusResponse}
-        className="bg-blue-600 text-white px-4 py-2 rounded w-full"
-        disabled={loading}
-      >
-        {loading ? "Praying..." : "Get Divine Advice"}
-      </button>
+    <div className="flex flex-col justify-between rounded-3xl p-4 bg-cardBgLight border-4 border-cardBorder space-y-2 shadow-md max-w-3xl sm:mx-auto">
+      {!response && (
+        <>
+          <h2 className="font-medium">{inputLabel}</h2>
+          <textarea
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            required
+            placeholder={predicament}
+            className="bg-transparent border rounded-xl p-2 border-amber-200  focus:outline-none focus:ring-2 focus:ring-cardBorder focus:border-transparent focus:bg-background"
+          />
+          <button
+            onClick={getJesusResponse}
+            disabled={loading}
+            className="w-full border-4 border-white p-2 rounded-3xl bg-cardBgDark shadow-inner shadow-white hover:shadow-none active:shadow-inner active:shadow-gray-300 select-none font-medium text-md"
+          >
+            {buttonPhrase}
+          </button>
+        </>
+      )}
+
       {response && (
-        <div className="mt-4 p-3 bg-gray-100 rounded">
-          <p className="italic">&quot;{response}&quot;</p>
+        <div className="rounded-xl text-black space-y-2">
+          <h2 className="font-medium">Message from Jesus:</h2>
+          <p>{response}</p>
+          <button
+            onClick={() => {
+              setInput("");
+              setResponse(null);
+            }}
+            className="w-full border-4 border-white p-2 rounded-3xl bg-cardBgDark shadow-inner shadow-white hover:shadow-none active:shadow-inner active:shadow-gray-300 select-none font-medium text-md"
+          >
+            {"Ask and ye shall receive (again)."}
+          </button>
         </div>
       )}
     </div>
