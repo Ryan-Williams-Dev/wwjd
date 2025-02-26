@@ -61,7 +61,7 @@ export default function JesusChat({
 
       {response && (
         <div className="rounded-xl text-black space-y-2">
-          <h2 className="font-medium">Message from Jesus:</h2>
+          <h2 className="font-medium">Message from the heavens:</h2>
           {response.split("\n\n").map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}

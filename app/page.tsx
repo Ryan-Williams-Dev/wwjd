@@ -13,7 +13,7 @@ export default function Home() {
     buttonPhrases[Math.floor(Math.random() * buttonPhrases.length)].text;
 
   return (
-    <div className="flex flex-col space-y-8 p-4 max-w-7xl mx-auto h-screen justify-center">
+    <div className="flex flex-col space-y-8 p-4 max-w-7xl mx-auto min-h-screen justify-center">
       <div className="flex flex-col items-center space-y-4 ">
         <Image
           alt="Illustration of Jesus Christ"
