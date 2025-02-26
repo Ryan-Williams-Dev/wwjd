@@ -54,7 +54,7 @@ export default function JesusChat({
             disabled={loading}
             className="w-full border-4 border-white p-2 rounded-3xl bg-cardBgDark shadow-inner shadow-white hover:shadow-none active:shadow-inner active:shadow-gray-300 select-none font-medium text-md"
           >
-            {buttonPhrase}
+            {loading ? "Fetching wisdom..." : buttonPhrase}
           </button>
         </>
       )}
@@ -62,7 +62,9 @@ export default function JesusChat({
       {response && (
         <div className="rounded-xl text-black space-y-2">
           <h2 className="font-medium">Message from Jesus:</h2>
-          <p>{response}</p>
+          {response.split("\n\n").map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
           <button
             onClick={() => {
               setInput("");

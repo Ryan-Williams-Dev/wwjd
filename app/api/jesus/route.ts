@@ -32,7 +32,7 @@ export async function POST(req: Request): Promise<NextResponse> {
           },
           { role: "user", content: userInput },
         ],
-        max_tokens: 100,
+        max_tokens: 1000,
       }),
     });
 
