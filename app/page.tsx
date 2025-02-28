@@ -41,10 +41,13 @@ export default function Home() {
             <span className="font-medium text-black">Ryan Williams</span>
           </span>
           <div className="flex gap-4">
-            <a href="https://github.com/Ryan-Williams-Dev">
+            <a target="_blank" href="https://github.com/Ryan-Williams-Dev">
               <Github size={40} />
             </a>
-            <a href="https://www.linkedin.com/in/ryan-williams-dev/">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/ryan-williams-dev/"
+            >
               <Linkedin size={40} />
             </a>
           </div>
