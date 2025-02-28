@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col space-y-8 p-4 max-w-7xl mx-auto min-h-screen justify-center">
+      <div className="flex flex-col space-y-8 p-4 max-w-7xl mx-auto min-h-[100svh] justify-center">
         <div className="flex flex-col items-center space-y-4 ">
           <Image
             alt="Illustration of Jesus Christ"
