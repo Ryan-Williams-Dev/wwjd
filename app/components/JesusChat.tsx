@@ -52,7 +52,7 @@ export default function JesusChat({
           <button
             onClick={getJesusResponse}
             disabled={loading}
-            className="w-full border-4 border-white p-2 rounded-3xl bg-cardBgDark shadow-inner shadow-white hover:shadow-none active:shadow-inner active:shadow-gray-300 select-none font-medium text-md"
+            className="w-full border-4 border-white p-2 rounded-3xl bg-cardBorder shadow-inner shadow-white hover:shadow-none active:shadow-inner active:shadow-gray-300 select-none font-medium text-md"
           >
             {loading ? "Fetching wisdom..." : buttonPhrase}
           </button>
@@ -75,7 +75,7 @@ export default function JesusChat({
               setInput("");
               setResponse(null);
             }}
-            className="w-full border-4 border-white p-2 rounded-3xl bg-cardBgDark shadow-inner shadow-white hover:shadow-none active:shadow-inner active:shadow-gray-300 select-none font-medium text-md"
+            className="w-full border-4 border-white p-2 rounded-3xl bg-cardBorder shadow-inner shadow-white hover:shadow-none active:shadow-inner active:shadow-gray-300 select-none font-medium text-md"
           >
             {"Ask and ye shall receive (again)."}
           </button>
